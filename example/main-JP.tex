@@ -1,0 +1,114 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+
+\usepackage{lipsum}
+
+% to use non-standard font
+\usepackage[utf8]{inputenc} %useful to type directly 
+\usepackage{zxjatype}
+\usepackage{fontspec}
+\usepackage[math-style=TeX]{unicode-math}
+\setmainfont[Ligatures=TeX,mallCapsFeatures={Letters=SmallCaps}]{Lato}
+\setmathfont[math-style=ISO,bold-style=ISO,vargreek-shape=TeX]{Lete Sans Math}
+%\setsansfont[Ligatures=TeX]{TeX Gyre Heros}
+\setjamainfont{Noto Sans JP}
+%\setjasansfont{IPAexGothic}
+%\setjamonofont{IPAexGothic}
+\usepackage{xltxtra}
+
+%\setmathfont[math-style=ISO,bold-style=ISO]{Lete Sans Math}
+
+
+\usetheme{JECS}
+
+%\graphicspath{{images/}}
+
+\title{プレゼンテーション}
+\subtitle{副題}
+\author{著者氏名}
+\institute{所属}
+\date{\today}
+
+\begin{document}
+
+\titleframe
+
+\begin{frame}[t]{リスト}
+子どもの健康と環境に関する全国調査（エコチル調査）は、2011年に始まった全国規模の出生コホート調査です。
+	\begin{itemize}
+		\item エコチル調査について
+			\begin{itemize}
+				\item \textbf{参加者リクルート}: 2011年1月--2014年3月
+				\item \textbf{エリア}: 日本全国
+				\item \textbf{登録参加者数}: 母親103,097人、子ども100, 108人、父親51,909
+				\item \textbf{参加機関}: 環境省、国立環境研究所、国立成育医療研究センター、15箇所のユニットセンター
+			\end{itemize}
+		\item 調査内容
+			\begin{itemize}
+				\item \textbf{全体調査}: すべての参加者（質問票調査、生体試料収集、医師診察等）
+				\item \textbf{詳細調査}: 全体調査からランダムに選ばれた5,000人を対象とした、より詳細な調査
+				\item \textbf{追加調査}: 外部資金で実施する調査
+			\end{itemize}
+		\item Credits: \url{https://www.env.go.jp/chemi/ceh/}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{ブロック}
+	%\framesubtitle{This is a subtitle}
+	\begin{block}{標準ブロック}
+		標準ブロックです。
+	\end{block}
+	
+	\begin{exampleblock}{例示ブロック}
+		例示のブロックです。
+	\end{exampleblock}
+	
+	\begin{alertblock}{強調ブロック}
+		強調時のブロックです。
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}[t]{数式}
+	ベイズ理論は近代疫学の最も便利なツールの一つです。
+	\begin{align*}
+		P(A | B) &= \frac{P(B | A)\cdot P(A)}{P(B)} \\
+		\intertext{ここで}\\
+		A,B &= \text{事象}\\
+		P(A | B) &= \text{Bが真の時のAの起こる確率}\\
+		P(B | A) &= \text{Aが真の時のBの起こる確率}\\
+		P(A),P(B) &= \text{互いに独立なAまたはBの起こる確率}
+	\end{align*}
+
+\end{frame}
+
+\begin{frame}[t]{二段組み}
+	スライドの中で、二段組みもできます。
+	\begin{columns}[t]
+		\begin{column}[T]{0.4\textwidth}
+			\lipsum[1][1-2]
+			\vspace{1em}
+			\begin{block}{ブロック}
+				これはブロックです。
+			\end{block}
+		\end{column}
+		\begin{column}[T]{0.4\textwidth}
+			\begin{itemize}
+				\item 項目1
+				\item 項目2
+				\item 項目3
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[t]{謝辞}
+謝辞です。
+\end{frame}
+
+
+\end{document}

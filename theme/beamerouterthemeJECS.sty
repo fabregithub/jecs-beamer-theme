@@ -23,6 +23,7 @@
 %% Copyright © 2025 Shoji  F. Nakayama
 %% ----------------------------------------------------------------------------
 \RequirePackage{tikz}
+\RequirePackage[absolute,overlay]{textpos}
 
 \mode<presentation>
 % Background for normal frames
@@ -106,4 +107,12 @@
   \endgroup
 }
 
+\renewcommand{\familydefault}{\rmdefault} % or \sfdefault
+\renewcommand\footnoterule{}
+\newcommand\ftnote[1]{%
+	\begin{textblock*}{\linewidth}(20pt, 248pt)
+		{\color{gray}
+		\scriptsize #1}
+	\end{textblock*}
+}
 \mode<all>

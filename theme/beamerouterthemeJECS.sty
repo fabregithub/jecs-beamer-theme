@@ -22,7 +22,7 @@
 %%
 %% Copyright © 2025 Shoji  F. Nakayama
 %% ----------------------------------------------------------------------------
-%\RequirePackage{tikz}
+\RequirePackage{tikz}
 \RequirePackage[absolute,overlay]{textpos}
 
 \mode<presentation>
@@ -33,7 +33,7 @@
 %  };
 %}
 \setbeamertemplate{background canvas}{
-	\begin{textblock*}{\linewidth}(0pt, 0pt)
+	\begin{textblock*}{\paperwidth}(0pt, 0pt)
 		\includegraphics[width=\paperwidth,height=\paperheight]{images/bg.png}
 	\end{textblock*}
 }
@@ -56,41 +56,47 @@
 {%
 	\leavevmode%
 	\hbox{%
-		\begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,left]{footline}%
+		\begin{beamercolorbox}[wd=0.98\paperwidth,ht=2.25ex,dp=1ex,left]{footline}%
 			\hspace*{1cm}
 		\end{beamercolorbox}
 		\llap{\includegraphics[height=0.5cm]{images/seal.png}\hspace*{1em}}
 	}%
 }
+%\setbeamertemplate{footline}
+%{%
+%	\begin{textblock*}{0.2\textwidth}(390pt, 240pt)
+%		\includegraphics[width=60pt]{images/seal.png}
+%	\end{textblock*}
+%}
 
 % Frame title
-%\setbeamertemplate{frametitle}
-%{%
-%  \begin{tikzpicture}[remember picture,overlay]
-%    \node[anchor=north west, xshift=0.8cm, yshift=-0.5cm] at (current page.north west) {
-%      \begin{beamercolorbox}[wd=0.8\paperwidth,ht=2ex,dp=1ex,left]{frametitle}
-%        \usebeamerfont{frametitle}\insertframetitle%
-%        \ifx\insertframesubtitle\@empty%
-%        \else%
-%          \\[-0.8ex]\usebeamerfont{framesubtitle}\insertframesubtitle%
-%        \fi%
-%      \end{beamercolorbox}
-%    };
-%  \end{tikzpicture}\vspace{0.5\baselineskip}
-%}
 \setbeamertemplate{frametitle}
 {%
-	\begin{textblock*}{\linewidth}(30pt, 20pt)
-		\begin{beamercolorbox}[wd=0.8\paperwidth,ht=2ex,dp=1ex,left]{frametitle}
-			\usebeamerfont{frametitle}\insertframetitle%
-				\ifx\insertframesubtitle\@empty%
-			\else%
-				\\[-0.8ex]\usebeamerfont{framesubtitle}\insertframesubtitle%
-			\fi%
-		\end{beamercolorbox}
-	\end{textblock*}
-	\vspace{1.25\baselineskip}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west, xshift=0.8cm, yshift=-0.5cm] at (current page.north west) {
+      \begin{beamercolorbox}[wd=0.8\paperwidth,ht=2ex,dp=1ex,left]{frametitle}
+        \usebeamerfont{frametitle}\insertframetitle%
+        \ifx\insertframesubtitle\@empty%
+        \else%
+          \\[-0.8ex]\usebeamerfont{framesubtitle}\insertframesubtitle%
+        \fi%
+      \end{beamercolorbox}
+    };
+  \end{tikzpicture}\vspace{0.5\baselineskip}
 }
+%\setbeamertemplate{frametitle}
+%{%
+%	\begin{textblock*}{\paperwidth}(30pt, 20pt)
+%		\begin{beamercolorbox}[wd=0.8\paperwidth,ht=2ex,dp=1ex,left]{frametitle}
+%			\usebeamerfont{frametitle}\insertframetitle%
+%				\ifx\insertframesubtitle\@empty%
+%			\else%
+%				\\[-0.8ex]\usebeamerfont{framesubtitle}\insertframesubtitle%
+%			\fi%
+%		\end{beamercolorbox}
+%	\end{textblock*}
+%	\vspace{1.25\baselineskip}
+%}
 
 % customisation for the title page
 \setbeamertemplate{title page}
@@ -112,30 +118,30 @@
 }
 
 % Custom title page frame macro
-%\newcommand{\titleframe}{
-%  \begingroup
-%    \setbeamertemplate{background canvas}{
-%      \tikz[remember picture,overlay] \node[anchor=north west, inner sep=0pt] at (current page.north west) {
-%        \includegraphics[width=\paperwidth,height=\paperheight]{images/title-bg.png}
-%      };
-%    }
-%    \begin{frame}[plain,noframenumbering]
-%      \titlepage
-%    \end{frame}
-%  \endgroup
-%}
 \newcommand{\titleframe}{
-	\begingroup
-		\setbeamertemplate{background canvas}{
-			\begin{textblock*}{\linewidth}(0pt, 0pt)
-				\includegraphics[width=\paperwidth,height=\paperheight]{images/title-bg.png}
-			\end{textblock*}
-		}
-		\begin{frame}[plain,noframenumbering]
-			\titlepage
-		\end{frame}
-	\endgroup
+  \begingroup
+    \setbeamertemplate{background canvas}{
+      \tikz[remember picture,overlay] \node[anchor=north west, inner sep=0pt] at (current page.north west) {
+        \includegraphics[width=\paperwidth,height=\paperheight]{images/title-bg.png}
+      };
+    }
+    \begin{frame}[plain,noframenumbering]
+      \titlepage
+    \end{frame}
+  \endgroup
 }
+%\newcommand{\titleframe}{
+%	\begingroup
+%		\setbeamertemplate{background canvas}{
+%			\begin{textblock*}{\paperwidth}(0pt, 0pt)
+%				\includegraphics[width=\paperwidth,height=\paperheight]{images/title-bg.png}
+%			\end{textblock*}
+%		}
+%		\begin{frame}[plain,noframenumbering]
+%			\titlepage
+%		\end{frame}
+%	\endgroup
+%}
 
 \renewcommand{\familydefault}{\rmdefault} % or \sfdefault
 \renewcommand\footnoterule{}
